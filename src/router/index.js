@@ -25,23 +25,6 @@ const router =  new Router({
   ]
 })
 
-// router.beforeEach((to, from, next) => {
-// 	// if(to.path==="/"){
-// 	// 	return;
-// 	// }
-// 	// next();
-//     //if(to.path!="/"){
-//     	console.log(to,from);
-// 	  	if (localStorage) {
-// 	        let username = localStorage.getItem('username');
-// 	        let password = localStorage.getItem('password');
-	        
-// 	        // if(!(username && password)){
-// 	        //   router.push({ path: 'chat', query: { username: username }})
-// 	        // }
 
-// 	    }
-//     //}
-// })
 
 export default router;

@@ -37,12 +37,8 @@ let onLineUsers = {}, //所有在线的用户
 
 io.on('connection', function(socket) {
 
-  console.log("already connection");
-
   //监听到客户端用户登录信息
-  socket.on('login', function(data) {
-    console.log("from client:");
-    console.log(data);
+  socket.on('login', function(data) 
 
     if (!data.uuid) {
       return;
@@ -58,14 +54,12 @@ io.on('connection', function(socket) {
     }
 
     //向所有客户端广播用户加入
-    io.emit('login', { allMsgInfo: allMsgInfo, onLineUsers: onLineUsers, onLineCnt: onLineCnt, user: data, login: true });
+    io.emit('login', { allMsgInfo: allMsgInfo, onLineUsers: onLineUsers, onLineCnt: onLineCnt });
 
   });
 
   //监听到客户端发送信息
   socket.on('sendMsg', function(data) {
-    console.log("from client:");
-    console.log(data);
 
     allMsgInfo.unshift({
       username: data.username,
@@ -73,14 +67,13 @@ io.on('connection', function(socket) {
     });
 
     //向所有客户端广播用户发送消息
-    io.emit('sendMsg', { allMsgInfo: allMsgInfo, onLineUsers: onLineUsers, onLineCnt: onLineCnt });
+    io.emit('sendMsg', { allMsgInfo: allMsgInfo });
 
   });
 
   //监听客户端用户退出登录
   socket.on('delete', function(data) {
-    console.log("from client:");
-    console.log(data);
+
 
     allMsgInfo.unshift({
       username: data.username,
@@ -93,6 +86,7 @@ io.on('connection', function(socket) {
 
     //向所有客户端广播用户退出登录
     io.emit('delete', { allMsgInfo: allMsgInfo, onLineUsers: onLineUsers, onLineCnt: onLineCnt});
+    
 
   })
 

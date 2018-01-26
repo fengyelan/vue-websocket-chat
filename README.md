@@ -23,10 +23,15 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 #####本项目技术######
-vue+websocket+mint-ui
+客户端：vue+websocket(socket.io)+mint-ui
+服务器端：node express
 
-##########待解决的问题########
-把汉字转化为拼音的问题-----解决
+启动客户端：
+在根目录下面：npm run start
+
+启动服务器端
+cd server
+pm2 start index.js
 
 
 如何启动服务器端

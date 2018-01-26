@@ -16,10 +16,7 @@
   </div>
 </template>
 <script>
-import { Header } from 'mint-ui';
-import { Field } from 'mint-ui';
-import { Button } from 'mint-ui';
-import { Toast } from 'mint-ui';
+import { Header,Field,Button,Toast } from 'mint-ui';
 
 import CHAT from '../api/chat'
 
